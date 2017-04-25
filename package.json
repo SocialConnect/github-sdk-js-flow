@@ -1,0 +1,22 @@
+{
+  "name": "github-flow-js",
+  "version": "0.1.0",
+  "description": "Javascript GitHub client for NodeJS or a browser using promises on top of fetch API with Flow types",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SocialConnect/github-sdk-js-flow.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Dmitry Patsura <talk@dmtry.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SocialConnect/github-sdk-js-flow/issues"
+  },
+  "homepage": "https://github.com/SocialConnect/github-sdk-js-flow#readme"
+}
