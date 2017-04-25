@@ -7,3 +7,9 @@ export type RepositoryEntity = {
     comments_url: string,
 }
 
+export type UserEntity = {
+    login: string,
+    id: string,
+    avatar_url: string,
+}
+
