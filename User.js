@@ -42,3 +42,21 @@ export function getUsers(params: getUsersParams, options:? FetchOptions): Promis
 
     return request(baseUrl, params, "GET", options);
 }
+    
+type getRepositoriesByUsernameParams = {
+    username: string,
+    type?: "all" | "owner" | "member",
+    sort?: "created" | "updated" | "pushed" | "full_name",
+    direction?: "asc" | "desc",
+}
+
+export function getRepositoriesByUsername(params: getRepositoriesByUsernameParams, options:? FetchOptions): Promise<Array<UserEntity>> {
+    if (params["username"] == null) {
+        throw new Error("Missing required parameter username when calling getRepositoriesByUsername");
+    }
+
+    const baseUrl = `/users/{username}/repos`.replace(`{${"username"}}`, `${params.id}`);
+    delete params.id;
+
+    return request(baseUrl, params, "GET", options);
+}
