@@ -5,13 +5,13 @@ This project is an auto generated SDK client for GitHub powered by
 
 # Installation
 
-```
+```bash
 npm install github-flow-js --save
 ```
 
 Example, get user by id:
 
-```
+```javascript
 @flow
 
 import { getUserById } from 'github-flow-js';
