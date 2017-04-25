@@ -12,7 +12,7 @@ npm install github-flow-js --save
 Example, get user by id:
 
 ```javascript
-@flow
+// @flow
 
 import { getUserById } from 'github-flow-js';
 
