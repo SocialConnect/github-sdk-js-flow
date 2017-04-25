@@ -32,3 +32,13 @@ export function getUser(params: getUserParams, options:? FetchOptions): Promise<
 
     return request(baseUrl, params, "GET", options);
 }
+    
+type getUsersParams = {
+    since: string,
+}
+
+export function getUsers(params: getUsersParams, options:? FetchOptions): Promise<Array<UserEntity>> {
+    const baseUrl = "/users";
+
+    return request(baseUrl, params, "GET", options);
+}
