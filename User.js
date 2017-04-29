@@ -56,7 +56,7 @@ export function getRepositoriesByUsername(params: getRepositoriesByUsernameParam
     }
 
     const baseUrl = `/users/{username}/repos`.replace(`{${"username"}}`, `${params.id}`);
-    delete params.id;
+    delete params.username;
 
     return request(baseUrl, params, "GET", options);
 }
