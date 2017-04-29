@@ -1,7 +1,6 @@
 // @flow
-/* global API_BASE_PATH */
 
-declare var API_BASE_PATH: string;
+const API_BASE_PATH: string = "https://api.github.com";
 
 export type FetchOptions = {
     headers:? Object
