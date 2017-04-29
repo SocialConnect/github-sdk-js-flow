@@ -1,10 +1,13 @@
 //@flow
 
 export type RepositoryEntity = {
+    id: number,
+    name: string,
     url: string,
     sha: string,
     html_url: string,
     comments_url: string,
+    fork: boolean,
 }
 
 export type UserEntity = {
