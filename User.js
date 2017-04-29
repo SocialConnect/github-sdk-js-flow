@@ -55,7 +55,7 @@ export function getRepositoriesByUsername(params: getRepositoriesByUsernameParam
         throw new Error("Missing required parameter username when calling getRepositoriesByUsername");
     }
 
-    const baseUrl = `/users/{username}/repos`.replace(`{${"username"}}`, `${params.id}`);
+    const baseUrl = `/users/{username}/repos`.replace(`{${"username"}}`, `${params.username}`);
     delete params.username;
 
     return request(baseUrl, params, "GET", options);
