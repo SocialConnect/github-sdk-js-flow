@@ -10,16 +10,21 @@ import type {
 
     
 type getRepositoryParams = {
-    id: string,
+    owner: string,
+    repo: string,
 }
 
 export function getRepository(params: getRepositoryParams, options:? FetchOptions): Promise<RepositoryEntity> {
-    if (params["id"] == null) {
-        throw new Error("Missing required parameter id when calling getRepository");
+    if (params["owner"] == null) {
+        throw new Error("Missing required parameter owner when calling getRepository");
+    }
+    if (params["repo"] == null) {
+        throw new Error("Missing required parameter repo when calling getRepository");
     }
 
-    const baseUrl = `/repos/{id}`.replace(`{${"id"}}`, `${params.id}`);
-    delete params.id;
+    const baseUrl = `/repos/${params.owner}/${params.repo}`;
+    delete params.owner;
+    delete params.repo;
 
     return request(baseUrl, params, "GET", options);
 }

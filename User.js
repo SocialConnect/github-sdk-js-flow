@@ -18,7 +18,7 @@ export function getUserById(params: getUserByIdParams, options:? FetchOptions): 
         throw new Error("Missing required parameter id when calling getUserById");
     }
 
-    const baseUrl = `/users/{id}`.replace(`{${"id"}}`, `${params.id}`);
+    const baseUrl = `/users/${params.id}`;
     delete params.id;
 
     return request(baseUrl, params, "GET", options);
@@ -55,7 +55,7 @@ export function getRepositoriesByUsername(params: getRepositoriesByUsernameParam
         throw new Error("Missing required parameter username when calling getRepositoriesByUsername");
     }
 
-    const baseUrl = `/users/{username}/repos`.replace(`{${"username"}}`, `${params.username}`);
+    const baseUrl = `/users/${params.username}/repos`;
     delete params.username;
 
     return request(baseUrl, params, "GET", options);
