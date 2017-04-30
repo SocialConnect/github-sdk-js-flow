@@ -2,6 +2,7 @@
 
 export type RepositoryEntity = {
     id: number,
+    owner: UserEntity,
     name: string,
     url: string,
     sha: string,
