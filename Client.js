@@ -35,7 +35,7 @@ export function request(url: string, params: Object, method: string = 'GET', opt
                 requestOptions = Object.assign(
                     requestOptions,
                     {
-                        body: buildQueryString(params)
+                        body: JSON.stringify(params)
                     }
                 )
             } else if (params && Object.keys(params).length > 0) { // Check that parameters exists
