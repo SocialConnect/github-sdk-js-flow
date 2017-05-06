@@ -1,5 +1,11 @@
 //@flow
 
+export type AuthorizationEntity = {
+    id?: number,
+    token?: string,
+    hashed_token?: string,
+}
+
 export type RepositoryEntity = {
     id: number,
     owner: UserEntity,
