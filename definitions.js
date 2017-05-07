@@ -1,5 +1,12 @@
 //@flow
 
+export type OrganizationEntity = {
+    id: number,
+    login: string,
+    avatar_url: string,
+    description: string,
+}
+
 export type AuthorizationEntity = {
     id: number,
     token: string,

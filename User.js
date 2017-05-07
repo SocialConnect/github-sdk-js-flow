@@ -6,6 +6,7 @@ import { request } from './Client'
 import type { FetchOptions } from './Client';
 import type {
     UserEntity,
+    OrganizationEntity,
 } from './definitions';
 
     
@@ -56,6 +57,21 @@ export function getRepositoriesByUsername(params: getRepositoriesByUsernameParam
     }
 
     const baseUrl = `/users/${params.username}/repos`;
+    delete params.username;
+
+    return request(baseUrl, params, "GET", options);
+}
+    
+type getOrganizationsByUsernameParams = {
+    username: string,
+}
+
+export function getOrganizationsByUsername(params: getOrganizationsByUsernameParams, options:? FetchOptions): Promise<Array<OrganizationEntity>> {
+    if (params["username"] == null) {
+        throw new Error("Missing required parameter username when calling getOrganizationsByUsername");
+    }
+
+    const baseUrl = `/users/${params.username}/orgs`;
     delete params.username;
 
     return request(baseUrl, params, "GET", options);
