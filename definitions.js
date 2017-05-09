@@ -26,7 +26,19 @@ export type RepositoryEntity = {
 
 export type UserEntity = {
     login: string,
-    id: string,
+    id: number,
     avatar_url: string,
+    gravatar_id: string,
+    site_admin: boolean,
+    name: string,
+    company: string,
+    blog: string,
+    location: string,
+    hireable: boolean,
+    bio: string,
+    public_repos: number,
+    public_gists: number,
+    followers: number,
+    following: number,
 }
 
