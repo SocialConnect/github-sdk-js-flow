@@ -49,6 +49,8 @@ type getRepositoriesByUsernameParams = {
     type?: "all" | "owner" | "member",
     sort?: "created" | "updated" | "pushed" | "full_name",
     direction?: "asc" | "desc",
+    page?: number,
+    per_page?: number,
 }
 
 export function getRepositoriesByUsername(params: getRepositoriesByUsernameParams, options:? FetchOptions): Promise<Array<UserEntity>> {
