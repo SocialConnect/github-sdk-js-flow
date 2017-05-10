@@ -51,7 +51,6 @@ export function request(url: string, params: Object, method: string = 'GET', opt
                     if (response.status >= 200 && response.status < 300) {
                         resolve(response.json());
                     } else {
-                        console.log(response.text());
                         reject(response);
                     }
                 },
