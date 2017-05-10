@@ -1,6 +1,6 @@
 // @flow
 
-import { request } from './Client'
+import { request, required } from './Client'
 
 // flow types
 import type { FetchOptions } from './Client';
@@ -8,7 +8,6 @@ import type {
     AuthorizationEntity,
 } from './definitions';
 
-    
 type createAuthorizationParams = {
     scopes?: Array<any>,
     note: string,
@@ -18,8 +17,9 @@ type createAuthorizationParams = {
     fingerprint?: string,
 }
 
-export function createAuthorization(params: createAuthorizationParams, options:? FetchOptions): Promise<AuthorizationEntity> {
-    const baseUrl = "/authorizations";
-
-    return request(baseUrl, params, "POST", options);
+export function createAuthorization(
+    params: createAuthorizationParams,
+    options:? FetchOptions
+): Promise<AuthorizationEntity> {
+    return request(`/authorizations`, params, "POST", options);
 }
