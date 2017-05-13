@@ -13,6 +13,12 @@ export type AuthorizationEntity = {
     hashed_token: string,
 }
 
+export type IssueEntity = {
+    id: number,
+    number: number,
+    title: string,
+}
+
 export type RepositoryEntity = {
     id: number,
     owner: UserEntity,
