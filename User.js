@@ -9,6 +9,17 @@ import type {
     OrganizationEntity,
 } from './definitions';
 
+type getUserFollowersParams = {
+}
+
+export function getUserFollowers(
+    id: string = required("id"),
+    params: getUserFollowersParams,
+    options:? FetchOptions
+): Promise<any> {
+    return request(`/users/${id}/followers`, params, "GET", options);
+}
+
 type getUserByIdParams = {
 }
 
