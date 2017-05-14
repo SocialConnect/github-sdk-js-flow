@@ -10,6 +10,8 @@ import type {
 } from './definitions';
 
 type getUserFollowersParams = {
+    page?: number,
+    per_page?: number,
 }
 
 export function getUserFollowers(
@@ -21,6 +23,8 @@ export function getUserFollowers(
 }
 
 type getUserFollowingParams = {
+    page?: number,
+    per_page?: number,
 }
 
 export function getUserFollowing(
