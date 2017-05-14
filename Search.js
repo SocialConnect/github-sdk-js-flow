@@ -5,8 +5,8 @@ import { request, required } from './Client'
 // flow types
 import type { FetchOptions } from './Client';
 import type {
-    IssueEntity,
-    RepositoryEntity,
+    SearchIssuesResult,
+    SearchRepositoriesResult,
 } from './definitions';
 
 type searchIssuesParams = {
@@ -16,7 +16,7 @@ type searchIssuesParams = {
 export function searchIssues(
     params: searchIssuesParams,
     options:? FetchOptions
-): Promise<Array<IssueEntity>> {
+): Promise<SearchIssuesResult> {
     return request(`/search/issues`, params, "GET", options);
 }
 
@@ -27,6 +27,6 @@ type searchRepositoriesParams = {
 export function searchRepositories(
     params: searchRepositoriesParams,
     options:? FetchOptions
-): Promise<Array<RepositoryEntity>> {
+): Promise<SearchRepositoriesResult> {
     return request(`/search/repositories`, params, "GET", options);
 }

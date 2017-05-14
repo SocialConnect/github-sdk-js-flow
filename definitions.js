@@ -19,6 +19,18 @@ export type IssueEntity = {
     title: string,
 }
 
+export type SearchIssuesResult = {
+    total_count: number,
+    incomplete_results: boolean,
+    items: Array<IssueEntity>,
+}
+
+export type SearchRepositoriesResult = {
+    total_count: number,
+    incomplete_results: boolean,
+    items: Array<RepositoryEntity>,
+}
+
 export type RepositoryEntity = {
     id: number,
     owner: UserEntity,
