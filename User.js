@@ -20,6 +20,17 @@ export function getUserFollowers(
     return request(`/users/${id}/followers`, params, "GET", options);
 }
 
+type getUserFollowingParams = {
+}
+
+export function getUserFollowing(
+    id: string = required("id"),
+    params: getUserFollowingParams,
+    options:? FetchOptions
+): Promise<any> {
+    return request(`/users/${id}/following`, params, "GET", options);
+}
+
 type getUserByIdParams = {
 }
 
