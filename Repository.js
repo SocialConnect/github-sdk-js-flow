@@ -19,3 +19,15 @@ export function getRepository(
 ): Promise<RepositoryEntity> {
     return request(`/repos/${owner}/${repo}`, params, "GET", options);
 }
+
+type getRepositoryCollaboratorsParams = {
+}
+
+export function getRepositoryCollaborators(
+    owner: string = required("owner"),
+    repo: string = required("repo"),
+    params: getRepositoryCollaboratorsParams,
+    options:? FetchOptions
+): Promise<any> {
+    return request(`/repos/${owner}/${repo}/collaborators`, params, "GET", options);
+}
