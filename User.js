@@ -16,7 +16,7 @@ export function getUserFollowers(
     id: string = required("id"),
     params: getUserFollowersParams,
     options:? FetchOptions
-): Promise<any> {
+): Promise<Array<UserEntity>> {
     return request(`/users/${id}/followers`, params, "GET", options);
 }
 
@@ -27,7 +27,7 @@ export function getUserFollowing(
     id: string = required("id"),
     params: getUserFollowingParams,
     options:? FetchOptions
-): Promise<any> {
+): Promise<Array<UserEntity>> {
     return request(`/users/${id}/following`, params, "GET", options);
 }
 

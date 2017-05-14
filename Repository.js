@@ -6,6 +6,7 @@ import { request, required } from './Client'
 import type { FetchOptions } from './Client';
 import type {
     RepositoryEntity,
+    UserEntity,
 } from './definitions';
 
 type getRepositoryParams = {
@@ -28,6 +29,6 @@ export function getRepositoryCollaborators(
     repo: string = required("repo"),
     params: getRepositoryCollaboratorsParams,
     options:? FetchOptions
-): Promise<any> {
+): Promise<Array<UserEntity>> {
     return request(`/repos/${owner}/${repo}/collaborators`, params, "GET", options);
 }
