@@ -31,6 +31,16 @@ export type SearchRepositoriesResult = {
     items: Array<RepositoryEntity>,
 }
 
+export type PushEvent = {
+    id: string,
+    type: string,
+    actor: Object,
+    repo: Object,
+    payload: Object,
+    public: boolean,
+    created_at?: string,
+}
+
 export type RepositoryEntity = {
     id: number,
     owner: UserEntity,

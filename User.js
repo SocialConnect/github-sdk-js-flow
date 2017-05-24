@@ -6,6 +6,7 @@ import { request, required } from './Client'
 import type { FetchOptions } from './Client';
 import type {
     UserEntity,
+    PushEvent,
     OrganizationEntity,
 } from './definitions';
 
@@ -33,6 +34,19 @@ export function getUserFollowing(
     options:? FetchOptions
 ): Promise<Array<UserEntity>> {
     return request(`/users/${id}/following`, params, "GET", options);
+}
+
+type getUserReceivedEventsParams = {
+    page?: number,
+    per_page?: number,
+}
+
+export function getUserReceivedEvents(
+    id: string = required("id"),
+    params: getUserReceivedEventsParams,
+    options:? FetchOptions
+): Promise<PushEvent> {
+    return request(`/users/${id}/received_events`, params, "GET", options);
 }
 
 type getUserByIdParams = {
