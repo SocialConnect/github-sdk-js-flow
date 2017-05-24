@@ -11,6 +11,8 @@ import type {
 
 type searchIssuesParams = {
     q: string,
+    page?: number,
+    per_page?: number,
 }
 
 export function searchIssues(
@@ -22,6 +24,8 @@ export function searchIssues(
 
 type searchRepositoriesParams = {
     q: string,
+    page?: number,
+    per_page?: number,
 }
 
 export function searchRepositories(
