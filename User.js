@@ -44,7 +44,7 @@ export function getUserReceivedEvents(
     id: string = required("id"),
     params: getUserReceivedEventsParams,
     options:? FetchOptions
-): Promise<Array<any>> {
+): Promise<Array<PushEvent|PullRequestEvent>> {
     return request(`/users/${id}/received_events`, params, "GET", options);
 }
 

@@ -33,12 +33,22 @@ export type SearchRepositoriesResult = {
 
 export type PushEvent = {
     id: string,
-    type: string,
+    type: "PushEvent",
     actor: Object,
     repo: Object,
     payload: Object,
     public: boolean,
-    created_at?: string,
+    created_at: string,
+}
+
+export type PullRequestEvent = {
+    id: string,
+    type: "PullRequestEvent",
+    actor: Object,
+    repo: Object,
+    payload: Object,
+    public: boolean,
+    created_at: string,
 }
 
 export type RepositoryEntity = {
