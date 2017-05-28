@@ -96,6 +96,16 @@ export function getRepositoriesByUsername(
     return request(`/users/${username}/repos`, params, "GET", options);
 }
 
+type getUserOrganizationsParams = {
+}
+
+export function getUserOrganizations(
+    params: getUserOrganizationsParams,
+    options:? FetchOptions
+): Promise<Array<OrganizationEntity>> {
+    return request(`/users/orgs`, params, "GET", options);
+}
+
 type getOrganizationsByUsernameParams = {
 }
 
