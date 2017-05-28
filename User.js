@@ -103,7 +103,7 @@ export function getUserOrganizations(
     params: getUserOrganizationsParams,
     options:? FetchOptions
 ): Promise<Array<OrganizationEntity>> {
-    return request(`/users/orgs`, params, "GET", options);
+    return request(`/user/orgs`, params, "GET", options);
 }
 
 type getOrganizationsByUsernameParams = {
