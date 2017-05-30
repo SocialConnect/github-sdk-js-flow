@@ -17,7 +17,7 @@ type searchIssuesParams = {
 
 export function searchIssues(
     params: searchIssuesParams,
-    options:? FetchOptions
+    options?: FetchOptions
 ): Promise<SearchIssuesResult> {
     return request(`/search/issues`, params, "GET", options);
 }
@@ -30,7 +30,7 @@ type searchRepositoriesParams = {
 
 export function searchRepositories(
     params: searchRepositoriesParams,
-    options:? FetchOptions
+    options?: FetchOptions
 ): Promise<SearchRepositoriesResult> {
     return request(`/search/repositories`, params, "GET", options);
 }

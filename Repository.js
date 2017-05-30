@@ -16,7 +16,7 @@ export function getRepository(
     owner: string = required("owner"),
     repo: string = required("repo"),
     params: getRepositoryParams,
-    options:? FetchOptions
+    options?: FetchOptions
 ): Promise<RepositoryEntity> {
     return request(`/repos/${owner}/${repo}`, params, "GET", options);
 }
@@ -28,7 +28,7 @@ export function getRepositoryCollaborators(
     owner: string = required("owner"),
     repo: string = required("repo"),
     params: getRepositoryCollaboratorsParams,
-    options:? FetchOptions
+    options?: FetchOptions
 ): Promise<Array<UserEntity>> {
     return request(`/repos/${owner}/${repo}/collaborators`, params, "GET", options);
 }

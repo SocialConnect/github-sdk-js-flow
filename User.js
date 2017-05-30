@@ -17,7 +17,7 @@ type getUserFollowersParams = {
 export function getUserFollowers(
     id: string = required("id"),
     params: getUserFollowersParams,
-    options:? FetchOptions
+    options?: FetchOptions
 ): Promise<Array<UserEntity>> {
     return request(`/users/${id}/followers`, params, "GET", options);
 }
@@ -30,7 +30,7 @@ type getUserFollowingParams = {
 export function getUserFollowing(
     id: string = required("id"),
     params: getUserFollowingParams,
-    options:? FetchOptions
+    options?: FetchOptions
 ): Promise<Array<UserEntity>> {
     return request(`/users/${id}/following`, params, "GET", options);
 }
@@ -43,9 +43,23 @@ type getUserReceivedEventsParams = {
 export function getUserReceivedEvents(
     id: string = required("id"),
     params: getUserReceivedEventsParams,
-    options:? FetchOptions
+    options?: FetchOptions
 ): Promise<Array<PushEvent|PullRequestEvent>> {
     return request(`/users/${id}/received_events`, params, "GET", options);
+}
+
+type getOrganizationUserEventsParams = {
+    page?: number,
+    per_page?: number,
+}
+
+export function getOrganizationUserEvents(
+    username: string = required("username"),
+    org: string = required("org"),
+    params: getOrganizationUserEventsParams,
+    options?: FetchOptions
+): Promise<Array<PushEvent|PullRequestEvent>> {
+    return request(`/users/${username}/events/orgs/${org}`, params, "GET", options);
 }
 
 type getUserByIdParams = {
@@ -54,7 +68,7 @@ type getUserByIdParams = {
 export function getUserById(
     id: string = required("id"),
     params: getUserByIdParams,
-    options:? FetchOptions
+    options?: FetchOptions
 ): Promise<UserEntity> {
     return request(`/users/${id}`, params, "GET", options);
 }
@@ -64,7 +78,7 @@ type getUserParams = {
 
 export function getUser(
     params: getUserParams,
-    options:? FetchOptions
+    options?: FetchOptions
 ): Promise<UserEntity> {
     return request(`/user`, params, "GET", options);
 }
@@ -75,7 +89,7 @@ type getUsersParams = {
 
 export function getUsers(
     params: getUsersParams,
-    options:? FetchOptions
+    options?: FetchOptions
 ): Promise<Array<UserEntity>> {
     return request(`/users`, params, "GET", options);
 }
@@ -91,7 +105,7 @@ type getRepositoriesByUsernameParams = {
 export function getRepositoriesByUsername(
     username: string = required("username"),
     params: getRepositoriesByUsernameParams,
-    options:? FetchOptions
+    options?: FetchOptions
 ): Promise<Array<UserEntity>> {
     return request(`/users/${username}/repos`, params, "GET", options);
 }
@@ -101,7 +115,7 @@ type getUserOrganizationsParams = {
 
 export function getUserOrganizations(
     params: getUserOrganizationsParams,
-    options:? FetchOptions
+    options?: FetchOptions
 ): Promise<Array<OrganizationEntity>> {
     return request(`/user/orgs`, params, "GET", options);
 }
@@ -112,7 +126,7 @@ type getOrganizationsByUsernameParams = {
 export function getOrganizationsByUsername(
     username: string = required("username"),
     params: getOrganizationsByUsernameParams,
-    options:? FetchOptions
+    options?: FetchOptions
 ): Promise<Array<OrganizationEntity>> {
     return request(`/users/${username}/orgs`, params, "GET", options);
 }

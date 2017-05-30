@@ -19,7 +19,7 @@ type createAuthorizationParams = {
 
 export function createAuthorization(
     params: createAuthorizationParams,
-    options:? FetchOptions
+    options?: FetchOptions
 ): Promise<AuthorizationEntity> {
     return request(`/authorizations`, params, "POST", options);
 }
@@ -30,7 +30,7 @@ type deleteAuthorizationParams = {
 export function deleteAuthorization(
     id: number = required("id"),
     params: deleteAuthorizationParams,
-    options:? FetchOptions
+    options?: FetchOptions
 ): Promise<any> {
     return request(`/authorizations/${id}`, params, "DELETE", options);
 }
