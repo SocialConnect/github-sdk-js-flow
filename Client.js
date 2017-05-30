@@ -3,7 +3,7 @@
 const API_BASE_PATH: string = "https://api.github.com";
 
 export type FetchOptions = {
-    headers:? Object
+    headers?: Object
 };
 
 function buildQueryString(params: Object): string {
@@ -25,7 +25,7 @@ function makeClient() {
         before: (midlleware) => {
             before.push(midlleware);
         },
-        request: (url: string, params: Object, method: string = 'GET', options:? FetchOptions) => {
+        request: (url: string, params: Object, method: string = 'GET', options?: FetchOptions) => {
             let requestOptions = Object.assign({}, options, { method: method });
 
             if (before) {
