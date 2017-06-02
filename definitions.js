@@ -17,6 +17,9 @@ export type IssueEntity = {
     id: number,
     number: number,
     title: string,
+    body: string,
+    repository_url: string,
+    created_at: string,
 }
 
 export type SearchIssuesResult = {
