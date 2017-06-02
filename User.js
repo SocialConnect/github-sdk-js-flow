@@ -6,6 +6,8 @@ import { request, required } from './Client'
 import type { FetchOptions } from './Client';
 import type {
     UserEntity,
+    PushEvent,
+    PullRequestEvent,
     OrganizationEntity,
 } from './definitions';
 

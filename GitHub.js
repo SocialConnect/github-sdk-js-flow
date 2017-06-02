@@ -4,6 +4,10 @@ import { request, required } from './Client'
 
 // flow types
 import type { FetchOptions } from './Client';
+import type {
+    PushEvent,
+    PullRequestEvent,
+} from './definitions';
 
 type getEventsParams = {
     page?: number,
