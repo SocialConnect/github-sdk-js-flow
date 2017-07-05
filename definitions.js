@@ -13,6 +13,13 @@ export type AuthorizationEntity = {
     hashed_token: string,
 }
 
+export type LabelEntity = {
+    id: number,
+    name: string,
+    color: string,
+    default: boolean,
+}
+
 export type IssueEntity = {
     id: number,
     number: number,
@@ -20,6 +27,7 @@ export type IssueEntity = {
     body: string,
     repository_url: string,
     created_at: string,
+    labels: Array<LabelEntity>,
 }
 
 export type SearchIssuesResult = {
