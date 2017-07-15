@@ -20,10 +20,15 @@ export type LabelEntity = {
     default: boolean,
 }
 
+export type NotificationSubject = {
+    title: string,
+    type: string,
+}
+
 export type NotificationEntity = {
     id: string,
     repository: RepositoryEntity,
-    subject: Object,
+    subject: NotificationSubject,
     reason: string,
     unread: boolean,
     updated_at: string,
