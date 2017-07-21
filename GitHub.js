@@ -7,6 +7,8 @@ import type { FetchOptions } from './Client';
 import type {
     PushEvent,
     PullRequestEvent,
+    CommitCommentEvent,
+    PullRequestReviewCommentEvent,
 } from './definitions';
 
 type getEventsParams = {
@@ -17,6 +19,6 @@ type getEventsParams = {
 export function getEvents(
     params: getEventsParams,
     options?: FetchOptions
-): Promise<Array<PushEvent|PullRequestEvent>> {
+): Promise<Array<PushEvent|PullRequestEvent|CommitCommentEvent|PullRequestReviewCommentEvent>> {
     return request(`/events`, params, "GET", options);
 }

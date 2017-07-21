@@ -77,6 +77,27 @@ export type PullRequestEvent = {
     created_at: string,
 }
 
+export type CommitCommentEvent = {
+    id: string,
+    type: "CommitCommentEvent",
+    payload: Object,
+    actor: Object,
+    repo: Object,
+    public?: boolean,
+    created_at?: string,
+}
+
+export type PullRequestReviewCommentEvent = {
+    id: string,
+    type: "PullRequestReviewCommentEvent",
+    org: Object,
+    payload: Object,
+    actor: Object,
+    repo: Object,
+    public?: boolean,
+    created_at?: string,
+}
+
 export type RepositoryEntity = {
     id: number,
     owner: UserEntity,
