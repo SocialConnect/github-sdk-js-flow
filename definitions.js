@@ -43,6 +43,16 @@ export type IssueEntity = {
     repository_url: string,
     created_at: string,
     labels: Array<LabelEntity>,
+    milestone: MilestoneEntity,
+    user: UserEntity,
+}
+
+export type MilestoneEntity = {
+    id: number,
+    number: number,
+    state: "open" | "closed",
+    title: string,
+    description: string,
 }
 
 export type SearchIssuesResult = {
