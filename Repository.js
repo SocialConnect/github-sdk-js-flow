@@ -7,6 +7,7 @@ import type { FetchOptions } from './Client';
 import type {
     RepositoryEntity,
     UserEntity,
+    CommitEntity,
 } from './definitions';
 
 type getRepositoryParams = {
@@ -31,4 +32,17 @@ export function getRepositoryCollaborators(
     options?: FetchOptions
 ): Promise<Array<UserEntity>> {
     return request(`/repos/${owner}/${repo}/collaborators`, params, "GET", options);
+}
+
+type getRepositoryCommitParams = {
+}
+
+export function getRepositoryCommit(
+    owner: string = required("owner"),
+    repo: string = required("repo"),
+    sha: string = required("sha"),
+    params: getRepositoryCommitParams,
+    options?: FetchOptions
+): Promise<CommitEntity> {
+    return request(`/repos/${owner}/${repo}/git/commits/${sha}`, params, "GET", options);
 }

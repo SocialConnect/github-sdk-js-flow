@@ -47,6 +47,20 @@ export type IssueEntity = {
     user: UserEntity,
 }
 
+export type CommitShortUserEntity = {
+    date: string,
+    name: string,
+    email: string,
+}
+
+export type CommitEntity = {
+    sha: string,
+    url: url,
+    message: string,
+    author: CommitShortUserEntity,
+    committer: CommitShortUserEntity,
+}
+
 export type MilestoneEntity = {
     id: number,
     number: number,
