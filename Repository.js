@@ -8,6 +8,7 @@ import type {
     RepositoryEntity,
     UserEntity,
     CommitEntity,
+    GitCommitEntity,
 } from './definitions';
 
 type getRepositoryParams = {
@@ -44,5 +45,18 @@ export function getRepositoryCommit(
     params: getRepositoryCommitParams,
     options?: FetchOptions
 ): Promise<CommitEntity> {
+    return request(`/repos/${owner}/${repo}/commits/${sha}`, params, "GET", options);
+}
+
+type getRepositoryGitCommitParams = {
+}
+
+export function getRepositoryGitCommit(
+    owner: string = required("owner"),
+    repo: string = required("repo"),
+    sha: string = required("sha"),
+    params: getRepositoryGitCommitParams,
+    options?: FetchOptions
+): Promise<GitCommitEntity> {
     return request(`/repos/${owner}/${repo}/git/commits/${sha}`, params, "GET", options);
 }

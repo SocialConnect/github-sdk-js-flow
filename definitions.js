@@ -47,18 +47,44 @@ export type IssueEntity = {
     user: UserEntity,
 }
 
-export type CommitShortUserEntity = {
+export type GitCommitShortUserEntity = {
     date: string,
     name: string,
     email: string,
 }
 
-export type CommitEntity = {
-    sha: string,
-    url: url,
+export type CommitStatsEntity = {
+    additions: number,
+    deletions: number,
+    total: number,
+}
+
+export type CommitVerificationEntity = {
+    verified: boolean,
+}
+
+export type CommitCommitEntity = {
+    url: string,
+    author: GitCommitShortUserEntity,
+    committer: GitCommitShortUserEntity,
     message: string,
-    author: CommitShortUserEntity,
-    committer: CommitShortUserEntity,
+    verification: CommitVerificationEntity,
+}
+
+export type CommitEntity = {
+    url: string,
+    sha: string,
+    author: UserEntity,
+    committer: UserEntity,
+    stats?: CommitStatsEntity,
+}
+
+export type GitCommitEntity = {
+    sha: string,
+    url: string,
+    message: string,
+    author: GitCommitShortUserEntity,
+    committer: GitCommitShortUserEntity,
 }
 
 export type MilestoneEntity = {
