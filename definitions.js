@@ -76,7 +76,7 @@ export type CommitEntity = {
     sha: string,
     author: UserEntity,
     committer: UserEntity,
-    stats?: CommitStatsEntity,
+    stats: CommitStatsEntity,
 }
 
 export type GitCommitEntity = {
