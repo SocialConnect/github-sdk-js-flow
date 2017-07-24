@@ -23,6 +23,19 @@ export function getRepository(
     return request(`/repos/${owner}/${repo}`, params, "GET", options);
 }
 
+type getRepositoryIssueParams = {
+}
+
+export function getRepositoryIssue(
+    owner: string = required("owner"),
+    repo: string = required("repo"),
+    id: number = required("id"),
+    params: getRepositoryIssueParams,
+    options?: FetchOptions
+): Promise<RepositoryEntity> {
+    return request(`/repos/${owner}/${repo}/issues/${id}`, params, "GET", options);
+}
+
 type getRepositoryCollaboratorsParams = {
 }
 
