@@ -38,6 +38,7 @@ export type NotificationEntity = {
 export type IssueEntity = {
     id: number,
     number: number,
+    comments: number,
     state: "open" | "closed",
     title: string,
     body: string,
