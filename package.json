@@ -1,6 +1,6 @@
 {
   "name": "github-flow-js",
-  "version": "0.16.2",
+  "version": "0.17.0",
   "description": "Javascript GitHub client for NodeJS or a browser using promises on top of fetch API with Flow types",
   "main": "index.js",
   "scripts": {
