@@ -57,6 +57,41 @@ function makeClient() {
                     )
                 }
             )
+        },
+        executeQL: async (query: string, variables: Object, options?: FetchOptions): Promise<any> => {
+            let requestOptions = Object.assign({}, options, { method: 'POST' });
+
+            if (before) {
+                before.forEach((middleware) => middleware(requestOptions));
+            }
+
+            requestOptions = Object.assign(
+                requestOptions,
+                {
+                    body: JSON.stringify({
+                        query: query.replace(/\n/g, ''),
+                        variables: variables
+                    })
+                }
+            );
+
+            try {
+                const response = await fetch(API_BASE_PATH + '/graphql', requestOptions);
+
+                if (response.status >= 200 && response.status < 300) {
+                    const result = await response.json();
+
+                    if (result.data) {
+                        return result.data;
+                    }
+                } else {
+                    return Promise.reject(response);
+                }
+            } catch (e) {
+                return Promise.reject(e)
+            }
+
+            return Promise.reject(new Error('Unknown GraphQL error'));
         }
     }
 }
@@ -64,10 +99,12 @@ function makeClient() {
 const defaultClient = makeClient();
 const before = defaultClient.before;
 const request = defaultClient.request;
+const executeQL = defaultClient.executeQL;
 
 export {
     required,
     makeClient,
     before,
-    request
+    request,
+    executeQL
 }

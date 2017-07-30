@@ -1,6 +1,6 @@
 // @flow
 
-import { request, required } from './Client'
+import { executeQL, required } from './Client'
 
 // flow types
 import type { FetchOptions } from './Client';
@@ -10,8 +10,8 @@ type executeGraphQLParams = {
 }
 
 export function executeGraphQL(
-    params: executeGraphQLParams,
-    options?: FetchOptions
+    query: string = required('query'),
+    variables: Object
 ): Promise<any> {
-    return request(`/graphql`, params, "POST", options);
+    return executeQL(query, variables, {});
 }
