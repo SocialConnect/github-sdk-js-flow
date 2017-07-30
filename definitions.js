@@ -35,6 +35,14 @@ export type NotificationEntity = {
     last_read_at: string,
 }
 
+export type CommentEntity = {
+    id: string,
+    body: string,
+    user: UserEntity,
+    created_at: string,
+    updated_at: string,
+}
+
 export type IssueEntity = {
     id: number,
     number: number,
