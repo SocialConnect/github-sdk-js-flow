@@ -4,6 +4,7 @@ export type OrganizationEntity = {
     id: number,
     login: string,
     name: string,
+    website: string,
     avatar_url: string,
     description: string,
 }
