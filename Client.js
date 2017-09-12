@@ -80,6 +80,10 @@ function makeClient() {
 
                 if (response.status >= 200 && response.status < 300) {
                     const result = await response.json();
+                    
+                    if (result.errors) {
+                        return Promise.reject(result.errors);
+                    }
 
                     if (result.data) {
                         return result.data;
