@@ -5,6 +5,8 @@ export type OrganizationEntity = {
     login: string,
     avatar_url: string,
     description: string,
+    name: string,
+    blog: string,
 }
 
 export type AuthorizationEntity = {
