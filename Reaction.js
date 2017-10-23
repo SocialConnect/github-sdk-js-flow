@@ -5,6 +5,20 @@ import { request, required } from './Client'
 // flow types
 import type { FetchOptions } from './Client';
 
+type createReactionOnIssueParams = {
+    content: "+1" | "-1" | "laugh" | "confused" | "heart" | "hooray",
+}
+
+export function createReactionOnIssue(
+    owner: string = required("owner"),
+    repo: string = required("repo"),
+    number: string = required("number"),
+    params: createReactionOnIssueParams,
+    options?: FetchOptions
+): Promise<any> {
+    return request(`/repos/${owner}/${repo}/issues/${number}/reactions`, params, "DELETE", options);
+}
+
 type deleteReactionParams = {
 }
 
