@@ -10,4 +10,5 @@ export * from './Notifications.js';
 export * from './GitHub';
 export * from './User';
 export * from './GraphQL.js';
+export * from './Followers';
 export * from './definitions';
